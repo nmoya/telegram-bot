@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"No tests at the moment\" && exit 0",
+    "start": "node app.js https://104.196.178.172"
   },
   "author": "",
   "license": "ISC",
