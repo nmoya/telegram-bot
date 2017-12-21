@@ -1,6 +1,7 @@
 const cmdVersion = require('./commands/version')
 const cmdWeather = require('./commands/weather')
 const cmdDaew = require('./commands/daew')
+const cmdAscii = require('./commands/ascii')
 
 const commands = {
   "weather": cmdWeather.run,
@@ -9,6 +10,8 @@ const commands = {
   "versao": cmdVersion.run,
   "daew": cmdDaew.run,
   "dae": cmdDaew.run,
+  "emoji": cmdAscii.run,
+  "ascii": cmdAscii.run,
 }
 
 const parseMessage = (message) => {
