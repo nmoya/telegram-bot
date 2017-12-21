@@ -15,7 +15,7 @@ const start = (webhookUrl) => {
   app.post('/', (req, res) => {
       const message = req.body.message;
       console.log(message)
-      if (message.text) {
+      if (message && message.text) {
         const chatId = getChatId(message)
         messages.handleMessage(message)
         .then((response) => {
@@ -27,6 +27,8 @@ const start = (webhookUrl) => {
           }
           res.sendStatus(200)
         })
+      } else {
+        res.sendStatus(300)
       }
   })
   app.listen(PORT, () => console.log(`Example app listening on port ${PORT}!`))
