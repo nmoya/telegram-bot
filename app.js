@@ -28,7 +28,7 @@ const start = (webhookUrl) => {
           res.sendStatus(200)
         })
       } else {
-        res.sendStatus(300)
+        res.sendStatus(200)
       }
   })
   app.listen(PORT, () => console.log(`Example app listening on port ${PORT}!`))
