@@ -7,9 +7,9 @@ const emoji = {
   "cute bear": "ʕ•ᴥ•ʔ",
   "squinting bear": "ʕᵔᴥᵔʔ",
   "cute face with big eyes": "(｡◕‿◕｡)",
-  "surprised / loudmouthed": "（　ﾟДﾟ）",
-  "shrug face": "¯\_(ツ)_/¯",
-  "meh": `¯\(°"_o)/¯`,
+  "surprised": "（　ﾟДﾟ）",
+  "shrug": "¯\\_(ツ)_/¯",
+  "meh": `¯\\(°"_o)/¯`,
   "feel perky": "(`･ω･´)",
   "angry face": "(╬ ಠ益ಠ)",
   "excited": "☜(⌒▽⌒)☞",
@@ -29,7 +29,7 @@ const emoji = {
   "kirby": `"⊂(◉‿◉)"つ`,
   "tripping out": "q(❂‿❂)p",
   "discombobulated": "⊙﹏⊙",
-  "sad and confused": "¯\_(⊙︿⊙)_/¯",
+  "sad and confused": "¯\\_(⊙︿⊙)_/¯",
   "japanese lion face": "°‿‿°",
   "confused": "¿ⓧ_ⓧﮌ",
   "confused scratch": "(⊙.☉)7",
@@ -46,7 +46,7 @@ const emoji = {
   "sad face": "(ಥ⌣ಥ)",
   "hugger": `(づ￣ ³￣)"づ`,
   "stranger danger": "(づ｡◕‿‿◕｡)づ",
-  "flip friend": `(ノಠ ∩ಠ)ノ彡( \"o°o)\``,
+  "flip friend": `(ノಠ ∩ಠ)ノ彡( \\"o°o)\\\``,
   "cry face": `｡ﾟ( ﾟஇ‸இﾟ")ﾟ｡`,
   "cry troll": "༼ ༎ຶ ෴ ༎ຶ༽",
   "tgif": `“ヽ(´▽"｀)ノ”`,
@@ -87,7 +87,6 @@ const emoji = {
   "depressed": "( ಠ ʖ̯ ಠ)",
 }
 
-
 const getAsciiEmoji = (args) =>
   new Promise((resolve, reject) => {
     if (args.length > 0) {
@@ -96,13 +95,20 @@ const getAsciiEmoji = (args) =>
       if (ascii) {
         resolve(ascii)
       } else {
-        reject('Wrong ascii code.')
+        reject('Wrong emoji code.')
       }
     } else {
-      reject('Empty arguments for ascii. Example: ascii meow')
+      reject('Empty arguments for emoji. Example: emoji meow')
     }
   })
 
+const getHelp = () => {
+  const options = Object.keys(emoji).sort()
+  options.push("\nUsage: emoji <emoji code>")
+  return options.join("\n")
+}
+
 module.exports = {
   run: getAsciiEmoji,
+  help: getHelp,
 }
