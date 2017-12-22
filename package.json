@@ -1,7 +1,7 @@
 {
   "name": "telegram-bot",
-  "version": "0.0.4.emoji",
-  "description": "",
+  "version": "0.0.4",
+  "description": "emoji",
   "main": "index.js",
   "scripts": {
     "test": "echo \"No tests at the moment\" && exit 0",
