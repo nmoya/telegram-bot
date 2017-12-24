@@ -1,5 +1,11 @@
 const { TelegramClient } = require('messaging-api-telegram');
-const apiKeys = require('../apiKeys.json')
+let apiKeys;
+try {
+  apiKeys = require('../apiKeys.json')
+} catch (e) {
+  apiKeys = {token: process.env.TELEGRAM_KEY};
+}
+
 
 const newClient = (webHook) => {
   const client = TelegramClient.connect(apiKeys.token)
