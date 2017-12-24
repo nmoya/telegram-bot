@@ -1,8 +1,10 @@
 const commands = require('./commands/commands').commands
+const accents = require('remove-accents')
 
 const parseMessage = (message) => {
   const text = message.text
-  const segments = text.replace('\n', ' ').split(' ')
+  let segments = text.replace('\n', ' ')
+  segments = accents.remove(segments).split(' ')
   const command = segments[0]
   segments.shift()
   return {
