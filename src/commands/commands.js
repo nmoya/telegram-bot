@@ -3,6 +3,7 @@ const cmdWeather = require('./weather')
 const cmdDaew = require('./daew')
 const cmdAscii = require('./emoji')
 const cmdAlergies = require('./alergies')
+const cmdFeliz = require('./feliz')
 
 const getMan = (args) =>
   new Promise((resolve, reject) => {
@@ -28,6 +29,7 @@ const commands = {
   "emoji": cmdAscii.run,
   "man": getMan,
   "alergias": cmdAlergies.run,
+  "feliz": cmdFeliz.run,
 }
 
 const manCommands = {
