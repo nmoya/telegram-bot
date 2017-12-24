@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"No tests at the moment\" && exit 0",
-    "start": "node app.js https://telegram-bot-189723.appspot.com"
+    "start": "node app.js https://hal-telegram-bot.herokuapp.com/"
   },
   "author": "",
   "license": "ISC",
