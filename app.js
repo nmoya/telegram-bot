@@ -12,6 +12,9 @@ const getChatId = (message) => {
 const start = (webhookUrl) => {
   const client = TelegramClient.new(webhookUrl)
   app.use(bodyParser.json())
+  app.get('/', (req, res) => {
+    res.send("It works!!!")
+  })
   app.post('/', (req, res) => {
       const message = req.body.message;
       console.log(message)
