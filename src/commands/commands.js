@@ -4,6 +4,7 @@ const cmdDaew = require('./daew')
 const cmdAscii = require('./emoji')
 const cmdAlergies = require('./alergies')
 const cmdFeliz = require('./feliz')
+const cmdPoll = require('./poll')
 
 const getMan = (args) =>
   new Promise((resolve, reject) => {
@@ -30,11 +31,19 @@ const commands = {
   "man": getMan,
   "alergias": cmdAlergies.run,
   "feliz": cmdFeliz.run,
+  "enquete": cmdPoll.poll,
+  "poll": cmdPoll.poll,
+  "opcao": cmdPoll.option,
+  "option": cmdPoll.option,
+  "votar": cmdPoll.vote,
+  "vote": cmdPoll.vote
 }
 
 const manCommands = {
   "emoji": cmdAscii.help,
   "man": () => "Nice try ;)\nUsage: man <command>",
+  "poll": cmdPoll.help,
+  "enquete": cmdPoll.help
 }
 
 

@@ -4,7 +4,7 @@ const PORT = process.env.PORT || 5000;
 const bodyParser = require('body-parser')
 const messages = require('./src/messages')
 const TelegramClient = require('./src/telegram')
-const package = require('package.json')
+const package = require('./package.json')
 
 const getChatId = (message) => {
   return message.chat.id;
