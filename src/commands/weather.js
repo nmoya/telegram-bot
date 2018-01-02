@@ -11,11 +11,15 @@ const getWeatherInfo = (args) =>
         const temperature = data.item.condition.temp
         const windSpeed = (data.wind.speed / 1.6).toFixed(0)
         const sunset = data.astronomy.sunset
+        const sunrise = data.astronomy.sunrise
+        const condition = data.item.condition.text
         resolve(
 `${resultCity}
 Temperatura: ${temperature}°C
 Vento: ${windSpeed} km/h
-Por do sol: ${sunset}`)
+Nascer do sol: ${sunrise}
+Por do sol: ${sunset}
+Condição: ${condition}`)
       }).catch(err => {
         reject('Hm.. Something went wrong in the weather code.')
       })
