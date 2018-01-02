@@ -4,6 +4,7 @@ const PORT = process.env.PORT || 5000;
 const bodyParser = require('body-parser')
 const messages = require('./src/messages')
 const TelegramClient = require('./src/telegram')
+const package = require('package.json')
 
 const getChatId = (message) => {
   return message.chat.id;
@@ -13,7 +14,7 @@ const start = (webhookUrl) => {
   const client = TelegramClient.new(webhookUrl)
   app.use(bodyParser.json())
   app.get('/', (req, res) => {
-    res.send("It works!!!")
+    res.send(`It works!!! Running: ${package.version}`)
   })
   app.post('/', (req, res) => {
       const message = req.body.message;
