@@ -1,7 +1,7 @@
 {
   "name": "telegram-bot",
-  "version": "0.0.7",
-  "description": "enquete",
+  "version": "0.0.8",
+  "description": "steam",
   "main": "index.js",
   "scripts": {
     "test": "echo \"No tests at the moment\" && exit 0",
@@ -14,6 +14,7 @@
     "express": "^4.16.2",
     "messaging-api-telegram": "^0.5.4",
     "remove-accents": "^0.4.2",
+    "request": "^2.87.0",
     "sprintf": "^0.1.5",
     "yahoo-weather": "^2.2.2"
   },

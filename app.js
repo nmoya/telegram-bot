@@ -18,7 +18,7 @@ const start = (webhookUrl) => {
   })
   app.post('/', (req, res) => {
       const message = req.body.message;
-      console.log(message)
+      // console.log(message)
       if (message && message.text) {
         const chatId = getChatId(message)
         messages.handleMessage(message)
