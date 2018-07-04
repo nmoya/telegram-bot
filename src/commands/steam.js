@@ -3,7 +3,7 @@ const STEAM_GAMES_URL = 'http://api.steampowered.com/ISteamApps/GetAppList/v0002
 const STEAM_PRICE_URL = 'https://store.steampowered.com/api/appdetails?cc=de&appids='
 const EXACT_ARG = '--exact'
 const CURRENCY_ARG = '--currency='
-const DEFAULT_CURRENCY = 'EUR'
+const DEFAULT_CURRENCY = 'BRL'
 const VALID_CURRENCIES = {
   'EUR': 'de',
   'BRL': 'br',
